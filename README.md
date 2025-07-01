@@ -1,10 +1,10 @@
 # About
 Multiple config files to set up different environments using `pacman`
 
->![WARNING] My rofi config is from [this repo](https://github.com/sayoohnara/bspwm-dots)
+>[!WARNING] My rofi config is from [this repo](https://github.com/sayoohnara/bspwm-dots)
 > i will change it later but im quite lazy now
 
->![WARNING] I didn't tested any of the installation scripts in a fresh install yet
+>[!WARNING] I didn't tested any of the installation scripts in a fresh install yet
 
 # Folders
 - **dm**: `xfce` and `gnome` installation and configuration
