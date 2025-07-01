@@ -82,7 +82,7 @@ Select **gpt** if asked for a label.
 
 Delete all other partitions, leaving only **free Space**
 
-> [!NOTE]
+> [!WARNING]
 > If you're doing a `dual boot`, just ignore the other OS partitions.
 
 ### Boot Partition
@@ -270,7 +270,7 @@ su myusername
 sudo pacman -Syu
 ```
 
-> [!WARNING]
+> [!NOTE]
 > Don't forget to execute the command `exit` before resuming the tutorial
 
 # Reboot
