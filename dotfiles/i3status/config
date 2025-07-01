@@ -1,0 +1,31 @@
+general {
+	colors = true
+	interval = 5
+}
+
+order += "ethernet enp7s0"
+order += "tztime local"
+order += "volume master"
+order += "disk /"
+
+ethernet enp7s0 {
+	format_up = "E: %ip (%speed)"
+	format_down = "E: down"
+}
+
+disk "/" {
+	format = "%free"
+}
+
+tztime local {
+	format = "%B %d %H:%M:%S"
+}
+
+volume master {
+	format = "♪: %volume"
+	format_muted = "♪: muted (%volume)"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+

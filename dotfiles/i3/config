@@ -1,0 +1,272 @@
+# -- STUFF I WILL CHANGE LATER
+font pango:JetBrainsMonoBold 10
+
+# Notification daemon
+exec --no-startup-id dunst
+
+# # Screen saver
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 04090e --nofork
+# # Screen lock after 2 minutes
+# exec_always --no-startup-id xset dpms 0 0 120
+# TODO: Disable until i discover how to not lock when watching videos
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+
+
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier Mod1
+
+# -- VARIABLES
+
+# Mod1 for Alt.
+set $mod Mod4
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term kitty
+set $file_explorer thunar
+# set $menu dmenu_run
+set $menu rofi -show drun
+
+
+
+# -- FLOATING WINDOWS
+# xprop | grep WM_CLASS
+# (second name)
+
+for_window [class="Thunar"] floating enable
+for_window [class="org.gnome.Nautilus"] floating enable
+# Image viewer
+for_window [class="loupe"] floating enable
+# Document viewer
+for_window [class="Evince"] floating enable
+for_window [class="Xfce4-taskmanager"] floating enable
+for_window [class="pavucontrol"] floating enable
+for_window [class="Blueman-manager"] floating enable
+for_window [class="SimpleScreenRecorder"] floating enable
+
+
+# -- STATUS BAR
+bar {
+	font pango:JetBrainsMono Nerd Font 10
+	position top
+	status_command i3status
+
+	separator_symbol |
+	tray_output primary
+	tray_padding 2
+
+	colors {
+		background #141216
+		statusline #d8cab8
+		separator #565148
+		# outline, background, text
+		focused_workspace  #141216 #141216 #ca1773
+		active_workspace   #141216 #141216 #ca1772
+		inactive_workspace #141216 #141216 #d8cab8
+		urgent_workspace   #141216 #141216 #ff455b
+	}
+}
+
+
+
+# -- BORDER & GAPS
+# Gaps
+gaps inner 8
+gaps outer 8
+# Border size
+default_border pixel 1
+default_floating_border pixel 1
+
+
+# Border colors
+#                       border  bg      text    ind     child border
+client.focused          #ca1773 #141216 #ca1773 #ca1773 #ca1773
+client.focused_inactive #564148 #141216 #d8cab8 #564148 #564148
+client.unfocused        #564148 #141216 #d8cab8 #564148 #564148
+client.urgent           #ff455b #141216 #ca1773 #ff455b #ff455b
+client.placeholder      #564148 #141216 #ca1773 #564148 #564148
+
+
+
+# -- THEMES
+# Cursor theme (X11 way)
+# exec --no-startup-id xsetroot -cursor_name left_ptr
+# exec --no-startup-id xcur2png Bibata-Modern-Classic
+# exec_always --no-startup-id xsetroot -cursor_name left_ptr
+# exec_always --no-startup-id xrdb -merge ~/.Xresources
+# GTK themes
+# exec_always --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-Mocha-Standard-Lavender-Dark'
+# exec_always --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Catppuccin-Mocha'
+# exec_always --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+
+
+# -- MONITORS
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallpaper.jpg
+exec_always xrandr --output HDMI-A-0 --mode 1920x1080 --rate 75 --pos 0x0 --primary
+
+
+
+# -- KEYBOARD
+exec_always --no-startup-id setxkbmap -layout us -variant intl
+
+
+
+# -- BASIC KEYBINDS
+bindsym $mod+q kill
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym Control+Shift+k exec $menu
+bindsym $mod+e exec $file_explorer
+bindsym $mod+f fullscreen toggle
+
+
+
+# -- RELOAD
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+
+
+# -- WINDOW KEYBINDS
+
+# Switch the current container between different layout styles
+bindsym $mod+w layout tabbed
+bindsym $mod+s layout toggle split
+# bindsym $mod+s layout stacking
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+# focus the parent container
+# bindsym $mod+a focus parent
+# focus the child container
+#bindsym $mod+d focus child
+
+
+# -- SCRATCHPAD
+# Move the current window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# -- OTHER KEYBINDS
+
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+
+
+# Layout stuff:
+#
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+	bindsym $mod+b split h
+	bindsym $mod+v split v
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	# These bindings trigger as soon as you enter the resize mode
+
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym $left resize shrink width 10 px or 10 ppt
+	bindsym $down resize grow height 10 px or 10 ppt
+	bindsym $up resize shrink height 10 px or 10 ppt
+	bindsym $right resize grow width 10 px or 10 ppt
+
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+
+	# back to normal: Enter or Escape or $mod+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	# bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+

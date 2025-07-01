@@ -1,0 +1,57 @@
+[global]
+# -- Behaviour
+font               = "JetBrainsMono Nerd Font 10"
+width              = (0, 350)
+height             = (0, 150)
+origin             = top-right
+offset             = (10, 20)
+notification_limit = 20
+
+# -- Appearance
+text_icon_padding  = 8
+padding            = 8
+separator_height   = 2
+corner_radius      = 2
+horizontal_padding = 2
+frame_width        = 2
+
+# -- Format
+markup           = full
+format           = "<b>%s</b>\n----------\n%b"
+icon_path        = ""
+icon_position    = left
+max_icon_size    = 64
+show_indicators  = false
+separator_color  = frame
+separator_height = 2
+
+# -- Shortcuts
+mouse_left_click   = do_action, close_current
+mouse_middle_click = do_action, close_current
+mouse_right_click  = close_all
+history = ctrl+shift+period
+
+# -- Colors
+[urgency_low]
+background = "#181818E5"
+foreground = "#d8cab8"
+timeout = 10
+# Icon for notifications with low urgency
+default_icon = dialog-information
+
+[urgency_normal]
+background = "#181818E5"
+foreground = "#d8cab8"
+timeout = 10
+override_pause_level = 30
+# Icon for notifications with normal urgency
+default_icon = dialog-information
+
+[urgency_critical]
+background = "#181818E5"
+foreground = "#d8cab8"
+frame_color = "#ab4642"
+timeout = 0
+override_pause_level = 60
+# Icon for notifications with critical urgency
+default_icon = dialog-warning
