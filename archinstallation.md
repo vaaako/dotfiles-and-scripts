@@ -261,7 +261,7 @@ EDITOR=nano visudo
 
 Go to last lines and uncomment the following:
 ```
-%wheel ALL=(ALL) ALL
+%wheel ALL=(ALL:ALL) ALL
 ```
 
 Now you can test if the user has `sudo`

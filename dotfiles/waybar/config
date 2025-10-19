@@ -1,0 +1,59 @@
+{
+	"layer": "bot",
+	"position": "top",
+	"spacing": 0,
+	"height": 0,
+	"margin-bottom": 0,
+
+	"modules-left": ["sway/workspaces"],
+	"modules-center": ["clock"],
+	"modules-right": ["tray", "network", "battery", "pulseaudio"],
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": false,
+		"tooltip": false
+	},
+
+	"clock": {
+		"interval": 1,
+		"tooltip": true,
+		"format": "{:%B %d %H:%M:%S}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"format": {
+				"today": "<span color='#ca1773'><b><u>{}</u></b></span>"
+			}
+		}
+	},
+
+	"tray": {
+		"spcaing": 10,
+		"tooltip": false
+	},
+
+	"network": {
+		"interval": 5,
+		"tooltip": false,
+		"format-wifi": " {bandwidthDownBits}",
+		"format-ethernet": " {bandwidthDownBits}",
+		"format-disconnected": "󰤮 No Network"
+	},
+
+	"pulseaudio": {
+		"scroll-step": 5,
+		"max-volume": 150,
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-icons": [
+			"",
+			"",
+			" "
+		],
+		"nospacing": 1,
+		"format-muted": " ",
+		"on-click": "pavucontrol -t 3",
+		"tooltip": false
+	}
+}
+

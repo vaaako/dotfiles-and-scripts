@@ -28,11 +28,14 @@ sudo pacman -S --noconfirm --needed \
 	evince \
 	sushi
 
+# pip install --user nautilus-open-any-terminal
+# gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
+
 # --- WAYLAND & X11 COMPATIBILITY ---
-# wl-clipboard: Command line copy/paste for Wayland
+# xorg-xwayland: The X11 compatibility layer, absolutely essential for running apps that don't support Wayland natively.
 # xdg-desktop-portal-wlr: The backend for screen sharing, portals, etc. (xdg-desktop-portal-wl is a transitional package)
 # xdg-desktop-portal-gtk: GTK theme changing
-# xorg-xwayland: The X11 compatibility layer, absolutely essential for running apps that don't support Wayland natively.
+# wl-clipboard: Command line copy/paste for Wayland
 # wl-mirror: A utility for mirroring the screen (used for virtual monitors)
 # grim: A screenshot utility
 # slurp: A utility to select a region of the screen (used with grim)
@@ -40,8 +43,11 @@ sudo pacman -S --noconfirm --needed \
 # slop: an application that queries for a selection from the user
 echo "Installing Wayland & X11 Compatibility Packages..."
 sudo pacman -S --noconfirm --needed \
-	wl-clipboard xdg-desktop-portal-wlr xorg-xwayland \
+	xorg-xwayland \
+	xdg-desktop-portal \
+	xdg-desktop-portal-wlr \
 	xdg-desktop-portal-gtk \
+	wl-clipboard \
 	wl-mirror \
 	grim \
 	slurp \

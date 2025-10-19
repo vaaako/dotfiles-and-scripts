@@ -15,6 +15,7 @@ sleep 5
 # libnotify: notify-send command
 #
 # feh: Background image setter
+# scrot: Screenshot tool
 #
 # xss-lock: A screen locker
 # xset: A tool for manipulating X11 settings
@@ -23,6 +24,7 @@ sudo pacman -S --noconfirm --needed \
 	xorg i3-wm i3status i3lock \
 	ly kitty dunst libnotify \
 	feh \
+	scrot \
 	xss-lock xset
 # xcompmgr: Compositor
 

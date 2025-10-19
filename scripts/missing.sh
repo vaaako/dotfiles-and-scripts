@@ -79,7 +79,7 @@ sudo systemctl enable ly.service
 
 # Enable the PipeWire audio services for your user
 # No 'sudo' and use '--user' flag
-sudo systemctl --user enable --now pipewire.socket pipewire-pulse.socket wireplumber.service
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
 
 # Enable Bluetooth service
 sudo systemctl enable bluetooth.service

@@ -1,0 +1,4 @@
+[screencast]
+max_fps=75
+chooser_type=dmenu
+chooser_cmd=swaymsg -t get_outputs | jq '.[] | .name' | sed 's/"//g' | wofi -d

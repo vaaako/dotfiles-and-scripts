@@ -1,0 +1,30 @@
+default-timeout=8000
+sort=-time
+
+text-color=#eeeeee
+background-color=#242424
+border-color=#1a1a1a
+
+font=JetBrains Mono 10
+width=340
+height=140
+padding=10
+border-radius=10
+
+[app-name=Pushover]
+on-notify=exec /bin/paplay /usr/share/sounds/freedesktop/stereo/message.oga
+
+[urgency=high]
+border-color=#FF0000
+default-timeout=0
+border-size=4
+layer=overlay
+on-notify=exec /bin/paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga
+
+[app-name=batsignal]
+border-color=#FF0000
+default-timeout=0
+border-size=4
+layer=overlay
+on-notify=exec /bin/paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga
+

@@ -1,0 +1,73 @@
+* {
+	font-family: JetBrainsMono Nerd Font;
+	border-radius: 0;
+	padding: 0px;
+	background: transparent;
+}
+
+window#waybar {
+	/* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
+	background: #141216;
+}
+
+
+#tray, #network, #clock, #pulseaudio {
+	margin-right: 10px;
+}
+
+#pulseaudio:hover {
+	background: #222222;
+	color: #d8cab8;
+	transition-duration: 120ms;
+}
+
+
+
+#tray:hover {
+	background: #222222;
+	transition-duration: 120ms;
+}
+
+#tray menu {
+	background-color: #141216;
+	color: #d8cab8;
+	padding: 4px;
+}
+
+#tray menu menuitem {
+	background: #27232b;
+	color: #d8cab8;
+}
+
+#tray menu menuitem:hover {
+	background: #141216;
+	color: #ca1773;
+	font-weight: bold;
+	transition-duration: 100ms;
+}
+
+
+
+#workspaces button {
+	transition-duration: 100ms;
+	color: #d8cab8;
+	font-weight: bold;
+}
+
+#workspaces button:hover {
+	transition-duration: 120ms;
+	color: #ca1773;
+	background: #222222;
+}
+#workspaces button.focused {
+	color: #ca1773;
+	font-weight: bold;
+}
+#workspaces button.active {
+	color: #ca1773;
+	font-weight: bold;
+}
+#workspaces button.urgent {
+	color: #ff455b;
+}
+
