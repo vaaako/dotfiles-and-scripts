@@ -53,4 +53,3 @@ sudo pacman -S --noconfirm --needed \
 	slurp \
 	jq
 
-
