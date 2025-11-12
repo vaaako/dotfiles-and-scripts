@@ -45,7 +45,7 @@ sudo pacman -S --noconfirm --needed \
 # polkit: A policy kit for managing system-wide privileges
 # brightnessctl: A utility to control screen brightness
 # blueman: A GTK Bluetooth manager (good choice)
-echo "Installing System Utilities..."
+echo "-> Installing System Utilities"
 sudo pacman -S --noconfirm --needed \
 	xdg-utils xdg-user-dirs \
 	xfce4-taskmanager \
@@ -73,9 +73,6 @@ echo "Now enabling essential services..."
 
 
 # -- ENABLE SERVICES
-
-# Enable the Login Manager
-sudo systemctl enable ly.service
 
 # Enable the PipeWire audio services for your user
 # No 'sudo' and use '--user' flag

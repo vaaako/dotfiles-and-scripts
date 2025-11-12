@@ -2,15 +2,22 @@ echo "Starting personal packages install..."
 echo "See script content for packages details"
 sleep 10
 
-
-echo -e "\n-> Installing yay"
+echo -e "\n-> Installing flatpak"
 sleep 3
-if [ ! -f /usr/bin/yay ]; then
-	git clone "https://aur.archlinux.org/yay.git"
-	cd yay
+sudo pacman -S --noconfirm --needed flatpak
+
+echo -e "\n-> Installing paru"
+sleep 3
+if [ ! -f /usr/bin/paru ]; then
+	git clone "https://aur.archlinux.org/paru-bin.git"
+	cd paru-bin
 	makepkg -si
 	cd ..
-	sudo rm -rf yay
+	sudo rm -rf paru-bin
+# paru             -- Alias for paru -Syu.
+# paru -S <target> -- Install a specific package.
+# paru -Sua        -- Upgrade AUR packages.
+# paru -Qua        -- Print available AUR updates.
 fi
 
 
