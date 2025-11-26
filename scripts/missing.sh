@@ -11,7 +11,7 @@ sleep 10
 # gvfs-google: For Google Drive
 # gvfs-nfs: For Network File System shares
 echo "Installing GVFS backends..."
-sleep 3
+sleep 2
 sudo pacman -S --noconfirm --needed \
 	gvfs \
 	gvfs-google \
@@ -20,7 +20,7 @@ sudo pacman -S --noconfirm --needed \
 
 
 echo -e "\n-> Installing ffmpeg and audio codecs"
-sleep 3
+sleep 2
 sudo pacman -S --noconfirm --needed \
 	ffmpeg \
 	gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-plugins-base \
@@ -32,7 +32,7 @@ sudo pacman -S --noconfirm --needed \
 # pipewire-alsa, pipewire-pulse, pipewire-jack: Compatibility layers for applications expecting ALSA, PulseAudio, or JACK
 # pavucontrol: A simple GUI volume mixer for PulseAudio (works with pipewire-pulse)
 echo -e "\n-> Installing pipewire"
-sleep 3
+sleep 2
 sudo pacman -S --noconfirm --needed \
 	pipewire wireplumber \
 	pipewire-alsa pipewire-pulse pipewire-jack \
@@ -46,7 +46,7 @@ sudo pacman -S --noconfirm --needed \
 # brightnessctl: A utility to control screen brightness
 # blueman: A GTK Bluetooth manager (good choice)
 echo "-> Installing System Utilities"
-sudo pacman -S --noconfirm --needed \
+sudo pacman -Sy --noconfirm --needed \
 	xdg-utils xdg-user-dirs \
 	xfce4-taskmanager \
 	polkit brightnessctl \
@@ -55,8 +55,8 @@ sudo pacman -S --noconfirm --needed \
 
 
 echo -e "\n-> Installing fonts"
-sleep 3
-sudo pacman -S --noconfirm --needed \
+sleep 2
+sudo pacman -Sy --noconfirm --needed \
 	ttf-jetbrains-mono-nerd \
 	ttf-ubuntu-font-family \
 	ttf-liberation \
@@ -69,8 +69,7 @@ sudo pacman -S --noconfirm --needed \
 
 echo "Package installation complete."
 echo "Now enabling essential services..."
-
-
+sleep 2
 
 # -- ENABLE SERVICES
 
@@ -84,3 +83,5 @@ sudo systemctl enable bluetooth.service
 # Enable the firewall
 sudo systemctl enable --now ufw.service
 
+
+echo -e "\nAll done! 🌱"
