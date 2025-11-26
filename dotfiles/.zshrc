@@ -222,7 +222,7 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export QT_QPA_PLATFORM=wayland
 	export SDL_VIDEODRIVER=wayland
 	export _JAVA_AWT_WM_NONREPARENTING=1
-	# export GTK_IM_MODULE=wayland
+	export GTK_IM_MODULE=wayland
 	export GTK_IM_MODULE=
 	export QT_IM_MODULE=wayland
 	export XMODIFIERS="@im=wayland"
@@ -230,3 +230,5 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export SWAYSOCK=$(ls /run/user/1000/sway-*)
 fi
 
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+eval "$(rbenv init -)"
