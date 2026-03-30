@@ -22,24 +22,12 @@ sleep 5
 echo "Installing Core Desktop Packages..."
 sudo pacman -S --noconfirm --needed \
 	xorg i3-wm i3status i3lock \
-	ly kitty dunst libnotify \
-	feh \
+	dunst libnotify \
 	scrot \
 	xss-lock xset
 # xcompmgr: Compositor
 
 # --- CORE USER APPLICATIONS ---
-# loupe: Image viewer
-# evince: Document viewer
-# sushi: Previewer for nautilus
-# nwg-look: A GTK+ theme switcher
-# xdg: Utilities (open links in browser, create home folders etc)
 # xsel: Get content of selection
-sudo pacman -S --noconfirm --needed \
-	loupe \
-	evince \
-	sushi \
-	nwg-look \
-	xdg-utils xdg-user-dirs \
-	xsel
+sudo pacman -S --noconfirm --needed xsel
 

@@ -7,26 +7,15 @@ sleep 5
 # --- CORE DESKTOP & WAYLAND COMPOSITOR ---
 # sway: The window manager and Wayland compositor
 # swayidle: An idle management daemon (e.g., turn off screen, lock after timeout)
-# wofi: An application launcher (your choice, excellent)
-# ly: A terminal-based display/login manager (your choice, good for minimal)
-# kitty: A GPU-accelerated terminal emulator (your choice, excellent)
-# waybar: A highly customizable status bar for Wayland composers like Sway (much more flexible than the default swaybar)
+# swaybg: Be able to change the background
+# rofi: An application launcher
+# waybar: A highly customizable status bar for Wayland composers like Sway
 # mako: A lightweight notification daemon for Wayland
 # libnotify: notify-send command
 echo "Installing Core Desktop Packages..."
 sudo pacman -S --noconfirm --needed \
-	sway swayidle \
-	wofi ly kitty waybar mako libnotify
-
-# --- CORE USER APPLICATIONS ---
-# loupe: Image viewer
-# evince: Document viewer
-# sushi: Previewer for nautilus
-# lxappearance: A GTK+ theme switcher
-sudo pacman -S --noconfirm --needed \
-	loupe \
-	evince \
-	sushi
+	sway swaybg swayidle \
+	rofi waybar mako libnotify
 
 # pip install --user nautilus-open-any-terminal
 # gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
@@ -34,7 +23,6 @@ sudo pacman -S --noconfirm --needed \
 # --- WAYLAND & X11 COMPATIBILITY ---
 # xorg-xwayland: The X11 compatibility layer, absolutely essential for running apps that don't support Wayland natively.
 # xdg-desktop-portal-wlr: The backend for screen sharing, portals, etc. (xdg-desktop-portal-wl is a transitional package)
-# xdg-desktop-portal-gtk: GTK theme changing
 # wl-clipboard: Command line copy/paste for Wayland
 # wl-mirror: A utility for mirroring the screen (used for virtual monitors)
 # grim: A screenshot utility
@@ -46,7 +34,6 @@ sudo pacman -S --noconfirm --needed \
 	xorg-xwayland \
 	xdg-desktop-portal \
 	xdg-desktop-portal-wlr \
-	xdg-desktop-portal-gtk \
 	wl-clipboard \
 	wl-mirror \
 	grim \

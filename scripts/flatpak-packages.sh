@@ -5,7 +5,7 @@ set -e
 
 # List of packages to install
 FLATPAKS=(
-	"io.github.flattool.Warehouse"
+	"com.github.tchx84.Flatseal"
 	"com.obsproject.Studio"
 	"com.usebottles.bottles"
 	"org.vinegarhq.Sober"

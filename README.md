@@ -10,20 +10,23 @@ Multiple config files to set up different environments using `pacman`
 
 # Folders
 - **dm**: `xfce` and `gnome` installation and configuration
-- **dotfiles**: My personal dotfiles. Some are only used with `x11` and some with `wayland` only
-- **interface**: Icons and themes
+- **dotfiles**: My personal dotfiles. Some are `x11` and some are `wayland` only
+- **interface**: Icons, themes and wallpapers
 - **scripts**: Auxiliary scripts
 - **wm**: `i3` and `sway` installation and configuration
 
+> ![WARNING]
+> Only `sway` was really tested
+
 ## Scripts
-- **[backupx11.sh](dotfiles/backupx11.sh)** and **[restorex11.sh](dotfiles/restorex11.sh)**: Backup and restore `dunst`, `i3`, `i3status` and `rofi`
-- **[backupwl.sh](dotfiles/backupwl.sh)** and **[restorewl.sh](dotfiles/restorewl.sh)**: Backup and restore `mako`, `sway`, `waybar`, `wofi` and `xdg-desktop-portal-wlr`
-- **[backupcommon.sh](dotfiles/backupcommon.sh)** and **[restorecommon.sh](dotfiles/restorecommon.sh)**: Backup and restore `.zshrc`, `kitty` and `neofetch`
+- **[backupx11.sh](dotfiles/backupx11.sh)** and **[restorex11.sh](dotfiles/restorex11.sh)**: Backup and restore `dunst`, `i3` and `i3status`
+- **[backupwl.sh](dotfiles/backupwl.sh)** and **[restorewl.sh](dotfiles/restorewl.sh)**: Backup and restore `mako`, `sway`, `waybar` and `xdg-desktop-portal-wlr`
+- **[backupcommon.sh](dotfiles/backupcommon.sh)** and **[restorecommon.sh](dotfiles/restorecommon.sh)**: Backup and restore `.zshrc`, `kitty`, `neofetch` and `rofi`
 
 - **[amd_gpu.sh](scripts/amd_gpu.sh)**: Install AMD GPU drivers
-- **[missing.sh](scripts/missing.sh)**: Install necessary packages
+- **[drivers.sh](scripts/drivers.sh)**: Install driver like packages
 - **[packages.sh](scripts/packages.sh)**: Install Personal packages
-- **[sudoconfigs.sh](scripts/sudoconfigs.sh)**: Configs with sudo permission
+- **[sudoconfigs.sh](scripts/sudoconfigs.sh)**: Configs that need sudo permission
 
 For neovim config see [my nvim repository](https://github.com/vaaako/nvim)
 

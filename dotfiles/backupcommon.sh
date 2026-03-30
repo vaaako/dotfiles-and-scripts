@@ -28,5 +28,10 @@ if [ -f "$HOME/.zshrc" ]; then
 	cp "$HOME/.zshrc" "$DOTFILES"
 fi
 
+# rofi
+if [ -d "$HOME/.config/rofi" ]; then
+	cp -a "$HOME/.config/rofi" "$DOTFILES"
+fi
+
 
 echo "dotfiles backuped!"

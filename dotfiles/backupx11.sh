@@ -28,10 +28,4 @@ if [ -d "$HOME/.config/i3status" ]; then
 	cp -a "$HOME/.config/i3status" "$DOTFILES"
 fi
 
-# rofi
-if [ -d "$HOME/.config/rofi" ]; then
-	cp -a "$HOME/.config/rofi" "$DOTFILES"
-fi
-
-
 echo "dotfiles backuped!"

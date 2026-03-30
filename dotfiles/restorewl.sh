@@ -32,7 +32,7 @@ cp -a "$DOTFILES/sway" "$CONFIG_FOLDER"
 cp -a "$DOTFILES/waybar" "$CONFIG_FOLDER"
 
 # wofi
-cp -a "$DOTFILES/wofi" "$CONFIG_FOLDER"
+# cp -a "$DOTFILES/wofi" "$CONFIG_FOLDER"
 
 # xdg-desktop-portal-wlr
 cp -a "$DOTFILES/xdg-desktop-portal-wlr" "$CONFIG_FOLDER"

@@ -31,5 +31,8 @@ cp -a "$DOTFILES/neofetch" "$CONFIG_FOLDER"
 # zsh
 cp "$DOTFILES/.zshrc" "$HOME/.zshrc"
 
+# i3status
+cp -a "$DOTFILES/rofi" "$CONFIG_FOLDER"
+
 echo "dotfiles restored!"
 

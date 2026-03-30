@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting missing packages install..."
+echo "Starting 'drivers' install..."
 echo "See script content for packages details"
 sleep 10
 
@@ -39,17 +39,10 @@ sudo pacman -S --noconfirm --needed \
 	pavucontrol
 
 
-# xdg-utils: For scripts that open files and URLs with default applications (xdg-open)
-# xdg-user-dirs: To manage user directories like ~/Documents, ~/Pictures, etc.
-# xfce4-taskmanager: Personal taskmanager
-# polkit: A policy kit for managing system-wide privileges
-# brightnessctl: A utility to control screen brightness
 # blueman: A GTK Bluetooth manager (good choice)
+# ufw: firewall
 echo "-> Installing System Utilities"
 sudo pacman -Sy --noconfirm --needed \
-	xdg-utils xdg-user-dirs \
-	xfce4-taskmanager \
-	polkit brightnessctl \
 	bluez bluez-libs bluez-plugins bluez-utils blueman \
 	ufw gufw \
 
