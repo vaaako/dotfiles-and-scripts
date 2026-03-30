@@ -94,7 +94,7 @@ alias largest='du -ah "${1:-.}" | sort -rh | tail -n +2 | head -n 10 | awk '\''{
 
 # shorten
 alias py='python3'
-alias nvim='bob run nightly'
+# alias nvim='bob run nightly'
 alias icat='kitten icat' # preview image
 
 # Neofetch
@@ -157,6 +157,16 @@ video-to-mp3() {
 	# -ar: audio sample rate
 	# -ab: audio bitrate
 	# -acodec copy: use same audio stream
+}
+
+ffmpeg-convert() {
+	if [ -z "$1" ] || [ -z "$2" ]; then
+		echo "Usage: ffmpeg-convert <input-ext> <output-ext>"
+		return 1
+	fi
+
+	for f in *."$1"; do ffmpeg -i "$f" -n "${f%.*}.$2"; done;
+	# -n: not overwrite
 }
 
 
@@ -230,5 +240,5 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export SWAYSOCK=$(ls /run/user/1000/sway-*)
 fi
 
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-eval "$(rbenv init -)"
+# export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+# eval "$(rbenv init -)"

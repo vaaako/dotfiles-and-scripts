@@ -36,11 +36,11 @@ for_window [app_id="org.gnome.Loupe"] floating enable
 for_window [app_id="org.gnome.Evince"] floating enable
 for_window [app_id="xfce4-taskmanager"] floating enable
 for_window [app_id="thunar"] floating enable
-for_window [title="Picture-in-Picture"] floating enable
+for_window [class="feh"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="org.qbittorrent.qBittorrent"] floating enable
 for_window [app_id="pavucontrol"] floating enable
-for_window [app_id="thunderbird"] floating enable
+for_window [app_id="engrampa"] floating enable
 
 
 # -- SWAYIDLE
@@ -56,8 +56,8 @@ for_window [app_id="thunderbird"] floating enable
 
 # -- BORDER & GAPS
 # Gaps
-gaps inner 8px
-gaps outer 8px
+gaps inner 4px
+gaps outer 4px
 # Border size
 default_border pixel 1px
 default_floating_border pixel 1px
@@ -79,8 +79,7 @@ exec_always gsettings set org.gnome.desktop.interface icon-theme 'Catppuccin-Moc
 exec_always gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Default browser
-exec_always xdg-settings set default-web-browser librewolf.desktop
-
+# exec_always xdg-settings set default-web-browser librewolf.desktop
 
 # -- MONITORS
 # Default wallpaper in /usr/share/backgrounds/sway/)
