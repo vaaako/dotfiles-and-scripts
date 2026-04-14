@@ -33,9 +33,10 @@ sudo pacman -S --noconfirm --needed \
 # pavucontrol: A simple GUI volume mixer for PulseAudio (works with pipewire-pulse)
 echo -e "\n-> Installing pipewire"
 sleep 2
-sudo pacman -S --noconfirm --needed \
+sudo pacman -S --needed \
 	pipewire wireplumber \
 	pipewire-alsa pipewire-pulse pipewire-jack \
+	pipewire-openrc pipewire-pulse-openrc wireplumber-openrc \
 	pavucontrol
 
 
@@ -43,8 +44,8 @@ sudo pacman -S --noconfirm --needed \
 # ufw: firewall
 echo "-> Installing System Utilities"
 sudo pacman -Sy --noconfirm --needed \
-	bluez bluez-libs bluez-plugins bluez-utils blueman \
-	ufw gufw \
+	bluez bluez-openrc bluez-libs bluez-plugins bluez-utils blueman \
+	ufw ufw-openrc gufw \
 
 
 echo -e "\n-> Installing fonts"
@@ -53,7 +54,7 @@ sudo pacman -Sy --noconfirm --needed \
 	ttf-jetbrains-mono-nerd \
 	ttf-ubuntu-font-family \
 	ttf-liberation \
-	ttf-cascadia-code \
+	# ttf-cascadia-code \
 	noto-fonts \
 	noto-fonts-cjk \
 	noto-fonts-emoji
@@ -68,13 +69,18 @@ sleep 2
 
 # Enable the PipeWire audio services for your user
 # No 'sudo' and use '--user' flag
-systemctl --user enable --now pipewire pipewire-pulse wireplumber
+# systemctl --user enable --now pipewire pipewire-pulse wireplumber
+rc-update add -U pipewire default
+rc-update add -U pipewire-pulse default
+rc-update add -U wireplumber default
 
 # Enable Bluetooth service
-sudo systemctl enable bluetooth.service
+# sudo systemctl enable bluetooth.service
+sudo rc-update add bluetoothd default
 
 # Enable the firewall
-sudo systemctl enable --now ufw.service
+# sudo systemctl enable --now ufw.service
+sudo rc-update add ufw default
 
 
 echo -e "\nAll done! 🌱"

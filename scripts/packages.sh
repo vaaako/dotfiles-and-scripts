@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo -e "\n-> Installing terminal packages"
+echo "[+] Fetching fastet mirrors"
+sleep 2
+sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+echo "[+] Installing terminal packages"
 sleep 2
 sudo pacman -Sy --noconfirm --needed \
 	zsh \
@@ -8,50 +12,51 @@ sudo pacman -Sy --noconfirm --needed \
 	zoxide \
 	neofetch
 
-echo -e "\n-> Installing applications"
-echo -e "\n-> vlc, firefox, gimp, xfce4-taskmanager, thunar and wine"
+echo "[+] Installing applications"
+echo "[+] vlc, firefox, gimp, qbittorrent, xfce4-taskmanager, thunar, wine and libreoffice"
 sleep 2
 sudo pacman -S --noconfirm --needed \
 	vlc \
 	firefox \
 	gimp \
+	qbittorrent \
 	xfce4-taskmanager \
-	thunar thunar-media-tags-plugin thunar-archive-plugin tumbler ffmpegthumbnailer engrampa \
+	thunar thunar-media-tags-plugin thunar-archive-plugin \
+	# nemo sushi file-roller \
+	tumbler ffmpegthumbnailer engrampa \
 	xed \
-	wine winetricks
+	wine winetricks \
+	libreoffice-still
 # thunar, thunar plugins, tumbler (image thumbnail), ffmpegthumbnailer (video thumbnail) engrampa (archive manager)
 # xed: text file view
 
-echo -e "\n-> Installing neovim nightly"
+echo "[+] Installing neovim nightly"
 sleep 2
-sudo pacman -S --noconfirm --needed bob
-bob use latest
-bob install nightly
+sudo pacman -S --noconfirm --needed neovim
+# sudo pacman -S --noconfirm --needed bob
+# bob use latest
+# bob install nightly
 
-echo -e "\n-> Installing C++ dev tools"
+echo "[+] Installing C++ dev tools"
 sleep 2
 sudo pacman -S --noconfirm --needed \
 	base-devel git lazygit clang make cmake gdb valgrind bear mingw-w64-gcc
 
-echo -e "\n-> Installing paru"
+echo "[+] Installing yay"
 sleep 2
-if [ ! -f /usr/bin/paru ]; then
-	git clone "https://aur.archlinux.org/paru-bin.git"
-	cd paru-bin
+if [ ! -f /usr/bin/yay ]; then
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
 	makepkg -si
 	cd ..
-	sudo rm -rf paru-bin
-# paru             -- Alias for paru -Syu.
-# paru -S <target> -- Install a specific package.
-# paru -Sua        -- Upgrade AUR packages.
-# paru -Qua        -- Print available AUR updates.
+	sudo rm -rf yay
 fi
 
-echo -e "\n-> Installing AUR packages"
+echo "[+] Installing AUR packages"
 sleep 2
-paru -S --noconfirm vesktop-bin librewolf-bin pokemon-colorscripts
+yay -S --noconfirm vesktop-bin librewolf-bin pokemon-colorscripts-git nemo-fileroller
 
-echo -e "\n-> Setting librewolf as default browser"
+echo "[+] Setting librewolf as default browser"
 sleep 2
 # Set default browser
 xdg-settings set default-web-browser librewolf.desktop
@@ -60,7 +65,7 @@ xdg-mime default librewolf.desktop \
 	x-scheme-handler/http \
 	x-scheme-handler/https
 
-echo -e "\n-> Configuring zsh"
+echo "[+] Configuring zsh"
 sleep 2
 # Plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions
@@ -68,4 +73,4 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-aut
 chsh -s $(which zsh)
 
 echo -e "\nAll done! 🌱"
-echo -e "\n-> Please restart the PC to apply the new default shell"
+echo "[+] Please restart the PC to apply the new default shell"
