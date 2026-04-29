@@ -98,8 +98,8 @@ alias py='python3'
 alias icat='kitten icat' # preview image
 
 # Neofetch
-alias neofetch='neofetch --source ~/.config/neofetch/arch_trans.txt --ascii_colors 14 9 15 --colors 5 4 13 9 7'
-alias neowofetch='neofetch --source ~/.config/neofetch/arch_trans2.txt --ascii_colors 14 9 15 --colors 5 4 13 9 7'
+alias neofetch='neofetch --source ~/.config/neofetch/artix.txt'
+alias neowofetch='neofetch --source ~/.config/neofetch/arch_trans.txt --ascii_colors 14 9 15 --colors 5 4 13 9 7'
 
 # Full commands
 # -Q = Query

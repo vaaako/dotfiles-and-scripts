@@ -1,0 +1,2 @@
+/dev/sdc1 /mnt/WD-1TB ntfs-3g defaults,uid=1000,gid=1000,umask=022,x-gvfs-show 0 0
+/dev/sdb /mnt/SSD ntfs-3g defaults,uid=1000,gid=1000,umask=022,x-gvfs-show 0 0

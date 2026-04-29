@@ -1,7 +1,6 @@
 [screencast]
 max_fps=75
-# chooser_type=dmenu
-# chooser_cmd=swaymsg -t get_outputs | jq '.[] | .name' | sed 's/"//g' | wofi -d
-chooser_type=none
-output_name=HDMI-A-1
-region=0,0 1920x1080
+# chooser_type=slurp
+# chooser_cmd=slurp
+# output_name=HDMI-A-1
+# region=0,0 1920x1080

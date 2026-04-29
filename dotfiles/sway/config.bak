@@ -298,3 +298,4 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 
 include /etc/sway/config.d/*
+
