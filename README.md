@@ -1,16 +1,12 @@
 # About
 Multiple config files to set up different environments using `pacman`
 
-
 > [!WARNING]
 > This repo has no support for **systemd**, only for **openrc**
 
 > [!WARNING]
 > My rofi config is from [this repo](https://github.com/sayoohnara/bspwm-dots)
 > i will change it later but im quite lazy now
-
-> [!NOTE]
-> I didn't tested any of the installation scripts in a fresh install yet
 
 # Folders
 - **dm**: `xfce` and `gnome` installation and configuration
@@ -20,17 +16,15 @@ Multiple config files to set up different environments using `pacman`
 - **wm**: `i3` and `sway` installation and configuration
 
 > ![WARNING]
-> Only `sway` was really tested
+> Only `sway` was tested
 
 ## Scripts
-- **[backupx11.sh](dotfiles/backupx11.sh)** and **[restorex11.sh](dotfiles/restorex11.sh)**: Backup and restore `dunst`, `i3` and `i3status`
-- **[backupwl.sh](dotfiles/backupwl.sh)** and **[restorewl.sh](dotfiles/restorewl.sh)**: Backup and restore `mako`, `sway`, `waybar` and `xdg-desktop-portal-wlr`
-- **[backupcommon.sh](dotfiles/backupcommon.sh)** and **[restorecommon.sh](dotfiles/restorecommon.sh)**: Backup and restore `.zshrc`, `kitty`, `neofetch` and `rofi`
-
-- **[amd_gpu.sh](scripts/amd_gpu.sh)**: Install AMD GPU drivers
-- **[drivers.sh](scripts/drivers.sh)**: Install driver like packages
-- **[packages.sh](scripts/packages.sh)**: Install Personal packages
-- **[sudoconfigs.sh](scripts/sudoconfigs.sh)**: Configs that need sudo permission
+- [backup-restore.sh](dotfiles/backup-restore.sh): Backups and restores system files
+- [backup-restore-sudo.sh](dotfiles/backup-restore-sudo.sh): Sudo related backup
+- [install-interface.sh](interface/install-interface.sh): Install icons, themes, fonts and wallpapers
+- [amd_gpu.sh](scripts/amd_gpu.sh): AMD GPU drivers
+- [core-packages.sh](scripts/drivers.sh): Core packages for my system
+- [packages.sh](scripts/packages.sh): Personal packages
 
 For neovim config see [my nvim repository](https://github.com/vaaako/nvim)
 
