@@ -1,6 +1,10 @@
 # About
 Multiple config files to set up different environments using `pacman`
 
+
+> [!WARNING]
+> This repo has no support for **systemd**, only for **openrc**
+
 > [!WARNING]
 > My rofi config is from [this repo](https://github.com/sayoohnara/bspwm-dots)
 > i will change it later but im quite lazy now
