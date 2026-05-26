@@ -15,15 +15,12 @@ Multiple config files to set up different environments using `pacman`
 - **scripts**: Auxiliary scripts
 - **wm**: `i3` and `sway` installation and configuration
 
-> ![WARNING]
-> Only `sway` was tested
-
 ## Scripts
 - [backup-restore.sh](dotfiles/backup-restore.sh): Backups and restores system files
 - [backup-restore-sudo.sh](dotfiles/backup-restore-sudo.sh): Sudo related backup
 - [install-interface.sh](interface/install-interface.sh): Install icons, themes, fonts and wallpapers
 - [amd_gpu.sh](scripts/amd_gpu.sh): AMD GPU drivers
-- [core-packages.sh](scripts/drivers.sh): Core packages for my system
+- [core-packages.sh](scripts/core-packages.sh): Core packages for my system
 - [packages.sh](scripts/packages.sh): Personal packages
 
 For neovim config see [my nvim repository](https://github.com/vaaako/nvim)
@@ -61,6 +58,7 @@ Scratchpad is a bag of holding for windows. It replaces minimization
 - `$mod+shift+(any direction)`: Move window to the direction
 
 ## Workspaces
+- `$mod+m`: Create a virtual workspace on `0`
 - `$mod+1-9`: Switch to workspace 1-9
 - `$mod+Shift+1-9`: Move window to workspace 1-9
 
@@ -79,17 +77,4 @@ Keybinds for `kitty`, so it works in all environments
 - `Ctrl+Shift+h`: Move to previous tab
 - `Ctrl+Shift+n`: Open a new terminal in the same directory
 
-## Alias
-- `rm`: Safe rm. Uses `gio` to safely remove files (move to trash)
-- `urm`: Unsafe rm
-- `explorer`: Open file explorer. Either `nautilus` (default) or `thunar`
-- `largest`: List the largest files in the current directory
-- `removeorphans`: Remove orphaned files
-- `virtualmonitor`: (Wayland only) creates a virtual monitor and mirrors it. Used to screenshare
-- `open-ports`: List open ports
-- `copy-image`: Uses `xclip` (X11) or `wl-copy` (Wayland) to copy an image to the clipboard
-- `drive-mount` and `drive-unmount`: Mount and unmount Google Drive to `~/Drive` using `rclone`
-- `mkv-to-mp4`: Converts a mkv file to mp4
-- `video-to-gif`: Converts a video file to gif
-- `video-to-mp3`: Converts a video file to mp3
 

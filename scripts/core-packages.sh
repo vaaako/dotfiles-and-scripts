@@ -4,9 +4,11 @@ echo "[+] Starting 'drivers' install..."
 echo "[+] See script content for packages details"
 sleep 10
 
-echo "[+] Installing GVFS backends..."
+echo "[+] Installing Packages..."
 sleep 2
-sudo pacman -S --noconfirm --needed autotiling
+sudo pacman -S --noconfirm --needed \
+	autotiling \
+	cliphist
 
 # --- VIRTUAL FILESYSTEM (for mounting phones, network shares, etc.) ---
 # gvfs: The backend that allows apps to access virtual filesystems
