@@ -22,7 +22,6 @@ sudo pacman -S --noconfirm --needed \
 	qbittorrent \
 	xfce4-taskmanager \
 	thunar thunar-media-tags-plugin thunar-archive-plugin \
-	# nemo sushi file-roller \
 	tumbler ffmpegthumbnailer engrampa \
 	xed \
 	wine winetricks \
@@ -30,12 +29,10 @@ sudo pacman -S --noconfirm --needed \
 # thunar, thunar plugins, tumbler (image thumbnail), ffmpegthumbnailer (video thumbnail) engrampa (archive manager)
 # xed: text file view
 
-echo "[+] Installing neovim nightly"
+echo "[+] Installing neovim"
 sleep 2
 sudo pacman -S --noconfirm --needed neovim
-# sudo pacman -S --noconfirm --needed bob
-# bob use latest
-# bob install nightly
+
 
 echo "[+] Installing C++ dev tools"
 sleep 2

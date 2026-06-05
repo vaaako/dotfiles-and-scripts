@@ -19,10 +19,10 @@ sudo pacman -S --noconfirm --needed \
 	xdg-utils \
 	xdg-user-dirs
 
-# loupe: Image viewer
+# eog: Image viewer
 # evince: Document viewer
 sudo pacman -S --needed --noconfirm \
-	loupe \
+	eog \
 	evince
 
 # -- Make sure the user directories are created
