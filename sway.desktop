@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Sway
+Comment=An i3-compatible Wayland compositor
+# Changed below to init correctly
+# Initialize DBUS_SESSION_BUS_ADDRESS
+Exec=dbus-run-session sway
+Type=Application
+DesktopNames=sway;wlroots
