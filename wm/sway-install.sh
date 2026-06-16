@@ -35,7 +35,6 @@ sudo pacman -S --noconfirm --needed \
 	xdg-desktop-portal \
 	xdg-desktop-portal-wlr \
 	wl-clipboard \
-	# wl-mirror \
 	grim \
 	slurp \
 	jq

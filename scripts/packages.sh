@@ -13,11 +13,10 @@ sudo pacman -Sy --noconfirm --needed \
 	neofetch
 
 echo "[+] Installing applications"
-echo "vlc, firefox, gimp, qbittorrent, xfce4-taskmanager, thunar, wine and libreoffice"
+echo "vlc, waterfox, gimp, qbittorrent, xfce4-taskmanager, thunar, wine and libreoffice"
 sleep 2
 sudo pacman -S --noconfirm --needed \
-	vlc \
-	firefox \
+	vlc waterfox \
 	gimp \
 	qbittorrent \
 	xfce4-taskmanager \
@@ -51,7 +50,7 @@ fi
 
 echo "[+] Installing AUR packages"
 sleep 2
-yay -S --noconfirm vesktop-bin librewolf-bin pokemon-colorscripts-git nemo-fileroller
+yay -S --noconfirm vesktop-bin pokemon-colorscripts-git
 
 echo "[+] Setting librewolf as default browser"
 sleep 2
